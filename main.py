@@ -1,3 +1,15 @@
+"""
+Title: Checking one-to-one character mapping
+03/18/2021
+Ming-Yun (Ann) Tsai
+
+Description:
+1. Use hash map to store the mapping relationship between 2 strings.
+2. If there's a change happens, for example : 'a' -> 'b' to 'a' -> 'c', return False, otherwise, return True.
+3. Handle input errors.
+4. Time complexity : O(N) / Space complexity : O(N) [N: the size of the input strings]
+"""
+
 import sys
 
 # Determine whether a one-to-one character mapping exists
@@ -35,3 +47,21 @@ def lengthCheck(str1, str2):
     if n1 != n2:
         print("ERROR : The lengths of two strings should be equal.")
         exit(1)
+
+
+if __name__ == '__main__':
+
+    # Check input numbers
+    num = len(sys.argv)
+    inputNumCheck(num)
+
+    # Command Line Arguments
+    str1 = sys.argv[1]
+    str2 = sys.argv[2]
+
+    # Check input strings' length
+    lengthCheck(str1, str2)
+        
+    # Determine whether a one-to-one character mapping exists
+    result = isOneToOne(str1, str2)
+    print(result)
